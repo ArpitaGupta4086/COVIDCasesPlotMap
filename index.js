@@ -1,7 +1,7 @@
 async function updateMap() {
     console.log("Updating map with realtime data")
     try{
-    await fetch("/COVIDCasesPlotMap/blob/main/data.json")
+    await fetch("https://github.com/ArpitaGupta4086/COVIDCasesPlotMap/blob/main/data.json")
         .then(response => response.json())
         .then(rsp => {
             // console.log(rsp.data)
