@@ -1,6 +1,7 @@
-function updateMap() {
+async function updateMap() {
     console.log("Updating map with realtime data")
-    fetch("/data.json")
+    try{
+    await fetch("/data.json")
         .then(response => response.json())
         .then(rsp => {
             // console.log(rsp.data)
@@ -24,6 +25,11 @@ function updateMap() {
                     .addTo(map);
             });
         })
+    }
+    catch (err) {
+    console.error('err', err);
+  }
+
 }
 updateMap();
  let interval = 1000;
