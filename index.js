@@ -1,7 +1,6 @@
-async function updateMap() {
+function updateMap() {
     console.log("Updating map with realtime data")
-    try{
-    await fetch("/COVIDCasesPlotMap/blob/main/data.json")
+     fetch("/COVIDCasesPlotMap/blob/main/data.json")
         .then(response => response.json())
         .then(rsp => {
             // console.log(rsp.data)
@@ -25,11 +24,6 @@ async function updateMap() {
                     .addTo(map);
             });
         })
-    }
-    catch (err) {
-    console.error('err', err);
-  }
-
 }
 updateMap();
  let interval = 1000;
